@@ -40,3 +40,4 @@ Icon
 # Python pyc
 # =========================
 *.pyc
+.idea
