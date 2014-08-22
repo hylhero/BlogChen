@@ -55,16 +55,13 @@
     <script type="text/javascript">
 	$(document).ready(function(){
         $('.sidebtn').click(function(){
-			var pos = $('.sidebtn').css('right');
+			var pos = $('.sidenav').css('right');
 			pos = parseInt(pos);
 
-			$('.sidebtn').stop().animate({right:200 -pos},500,function(){
+			$('.sidenav').stop().animate({right:-200 - pos},500,function(){
 
 			});
-			$('.sidenav').stop().animate({width:200 - pos},500,function(){
-
-			});
-			if (pos == 0){
+			if (pos == -200){
 				$('.filter').css('display','block');
 				$('.sidebtn').css('transform',' rotate(180deg)');
 			}else{
