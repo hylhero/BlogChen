@@ -1,0 +1,132 @@
+/* LOGIN FORM */
+
+body.login {
+    background: #eee;
+}
+
+.login #container {
+    background: white;
+    border: 1px solid #ccc;
+    width: 28em;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.login #content-main {
+    width: 100%;
+}
+
+.login form {
+    margin-top: 1em;
+}
+
+.login .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+}
+
+.login .form-row label {
+    padding-right: 0.5em;
+    line-height: 2em;
+    font-size: 1em;
+    clear: both;
+    color: #333;
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    clear: both;
+    padding: 6px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+}
+
+.login .password-reset-link {
+    text-align: center;
+}
+/*my login*/
+.container{
+    margin: 0px auto;
+    width:100%;
+    max-width:1000px;
+    /*width: 1000px;*/
+    padding-top: 120px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+.login_box{
+    max-width: 480px;
+    margin: 0px auto;
+    color: #888;
+    background-color: #fafafa;
+    border-bottom: 3px solid #008b77;
+}
+.login_title{
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    color: #FFF;
+    background-color: #EFEFEF;
+    background: -moz-linear-gradient(left, #008b77 0px, #0FBF7F 40%, #2FAF9F 100%)
+    repeat scroll 0% 0% transparent;
+    background: -webkit-linear-gradient(left, #008b77 0px, #0FBF7F 40%, #2FAF9F 100%)
+    repeat scroll 0% 0% transparent;
+    background: -ms-linear-gradient(left, #008b77 0px, #0FBF7F 40%, #2FAF9F 100%)
+    repeat scroll 0% 0% transparent;
+    background: linear-gradient(left, #008b77 0px, #0FBF7F 40%, #2FAF9F 100%)
+    repeat scroll 0% 0% transparent;
+}
+.login_form .input_box{
+    margin-top: 18px;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+.login_form .input_box input{
+    width: 100%;
+    max-width: 260px;
+    padding: 10px;
+    border:2px solid #EEE;
+    font-size: 16px;
+    font-family: "Courier New","Microsoft YaHei";
+}
+.login_form .input_box input:focus{
+    border-color: #008b77;
+}
+.login_form .login_btn{
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Courier New","Microsoft YaHei";
+    width:100%;
+    max-width: 280px;
+    padding: 10px;
+    border-style: none;
+    cursor: pointer;
+    background-color: #008b77;
+    margin-bottom: 20px;
+}
+.login_form .login_btn:hover{
+    background-color: #009b87;
+}
+#header div{
+    display: none;
+}
+.login_form .login_error{
+    padding: 10px;
+    color: red;
+    text-align: center;
+}

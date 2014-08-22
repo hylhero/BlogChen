@@ -1,0 +1,238 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+html {
+    height: 100%;
+}
+body{
+	font-family: "Courier New","Microsoft YaHei";
+	min-width: 280px;
+    position: relative;
+    min-height: 100%;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	width: 100%;
+	background: #008b77;
+	overflow: hidden;
+	margin-bottom: 36px;
+}
+.header .logo{
+	float: left;
+	width: 40%;
+}
+.header .logo a{
+	width: 100%;
+	display: block;
+}
+.header .logo a img{
+	width: 144px;
+	max-width: 100%;
+	height: 44px;
+	float: left;
+}
+.header .nav{
+	float: right;
+	width: 60%;
+    max-width: 200px;
+}
+.header .nav a{
+	font-size: 18px;
+	float: left;
+	width: 33.3%;
+	color: #fff;
+	text-align: center;padding-top: 18px;
+    padding-bottom: 6px;
+}
+.header .nav .focus{
+	background: #fff;
+	color: #008b77;
+}
+.header .nav a:hover{
+	background: #fff;
+	color: #008b77;
+}
+/*博文*/
+.article{
+	width: 100%;
+	margin-top: 20px;
+	background: #f8f8f8;
+}
+.article .article_head{
+	width: 100%;
+	border-top:2px solid #008b77;
+	border-bottom: 1px solid #008b77;
+}
+.article .article_head .article_title{
+	padding: 0.2em 0.4em;
+	font-size: 1.32em;
+}
+.article .article_head .article_title a{
+	color: #555;
+
+}
+.article .article_head .article_title a:hover{
+	color: #f60;
+}
+.article .article_head  .tags{
+	background-color: #eee;
+	overflow: hidden;
+}
+.article .article_head .tags span{
+	padding:0em 0.4em;
+	display: block;
+	float: left;
+}
+.article .article_head .tags span a{
+	font-size: 0.9em;
+	color: #009b77;
+}
+.article .article_head .tags span a:hover{
+	color: #f60;
+}
+.article .article_body{
+	padding:  4px 10px;
+	color: #555;
+	overflow: auto;
+    word-break: break-all;
+}
+.article .article_foot{
+	padding: 0em 0.4em;
+	padding-left: 10px;
+	overflow: hidden;
+    margin-top: 10px;
+}
+.article .article_foot span a{
+	font-size: 0.8em;
+	color: #555;
+}
+.article .article_foot span a:hover{
+	color: #f60;
+}
+.article .article_foot .article_time{
+	cursor: pointer;
+	float: left;
+}
+.article .article_foot .article_info{
+	float: right;
+}
+/*页码*/
+.pagination{
+	width: 100%;
+	padding-top: 30px;
+	font-size: 1em;
+	border-bottom: 1px solid #008b77;
+	overflow: hidden;
+}
+.pagination a{
+	float: left;
+	color: #5E5E5E;
+	text-decoration: none;
+	background-color: #F0F0F0;
+	display: inline-block;
+	padding: 0.3em;
+	min-width: 41px;
+	text-align: center;
+	transition: background-color 0.15s ease 0s;
+}
+.pagination .pageon{
+	background-color: #008B88;
+	color: #FFF;
+}
+.pagination a:hover{
+	background-color: #008B88;
+	color: #FFF;
+}
+/*footer*/
+.footer{
+	text-align: center;
+	color: #333;
+	padding-top: 8px;
+	padding-bottom: 8px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    background: #f3f3f3;
+    z-index: 600;
+}
+.footer .footer_user{
+	font-size: 1em;
+}
+.footer .footer_copyright{
+	font-size: 0.9em;
+}
+/*旁边导航条*/
+.sidenav{
+	position: fixed;
+	right: 0px;
+	top: 18%;
+	width: 0px;
+	max-width: 200px;
+	background: #fefefe;
+	max-height: 72%;
+	font-size: 1.3em;
+	overflow-y: auto;
+	overflow-x: hidden;
+    z-index:800;
+}
+.sidebtn{
+	position: fixed;
+    top:18%;
+	right: 0px;
+	background: url('/static/blog/images/side-arrow.png') 0px 0px no-repeat scroll transparent;
+	width: 20px;
+	height: 32px;
+	cursor: pointer;
+	z-index: 900;
+}
+.sidenav .sidenav-box{
+	margin-bottom: 10px;
+	margin-bottom: 16px;
+	overflow-x: hidden;
+	height: 100%;
+	z-index: 800;
+}
+.sidenav .sidenav-box a{
+	float: left;
+	width: 100%;
+	display: block;
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+	padding: 0.2em;
+	color: #008b77;
+}
+.sidenav .sidenav-box a:hover{
+	color: #004b8b;
+	background: #eee;
+}
+.sidenav .sidenav-title{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	color: #888;
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+	padding: 0.2em;
+}
+.sidenav .sidenav-container{
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+.filter{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #EEE;
+	opacity: 0.2;
+	display:none;
+    z-index: 700;
+}

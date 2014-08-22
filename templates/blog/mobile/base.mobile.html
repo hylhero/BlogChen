@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}Blog - Chen{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale:1.2">
+    {% block extra_meta %}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static "blog/css/base.mobile.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog/images/logo.png' %}">
+    <script type="text/javascript"src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+    {% block extra_link %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+</head>
+<body>
+    <!-- header Begin -->
+	<div class="header">
+		<div class="logo">
+			<a href="/"><img src="{% static 'blog/images/logo-2.png' %}"></a>
+		</div>
+		<span class="nav">
+			<a class="{% block nav_index %}{% endblock %}"href="/">首页</a>
+			<a class="{% block nav_blog %}{% endblock %}"href="{% url 'blog:index' %}">博客</a>
+			<a class="{% block nav_about %}{% endblock %}"href="/about">关于</a>
+		</span>
+	</div>
+    <!-- header End -->
+    <div id="container"style="overflow:hidden;padding-bottom: 60px;">
+        {% block container %}
+        {% endblock %}
+    </div>
+    {% if categorys %}
+    <!-- 导航条 Begin -->
+    <div class="filter"></div>
+    <div class="sidebtn"></div>
+    <div class="sidenav">
+        <div class="sidenav-container">
+            <div class="sidenav-title">分类导航</div>
+            <div class="sidenav-box">
+                {% for cate in categorys %}
+                    <a href="{% url 'blog:catelist' cate.id %}">{{ cate.category_name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- 导航条 End -->
+    {% endif %}
+    <!-- footer Begin -->
+	<div class="footer">
+		<p class="footer_user">Desigend by cheer</p>
+		<p class="footer_copyright">Copyright 2014</p>
+	</div>
+ <!-- footer End -->
+    <script type="text/javascript">
+	$(document).ready(function(){
+        $('.sidebtn').click(function(){
+			var pos = $('.sidebtn').css('right');
+			pos = parseInt(pos);
+
+			$('.sidebtn').stop().animate({right:200 -pos},500,function(){
+
+			});
+			$('.sidenav').stop().animate({width:200 - pos},500,function(){
+
+			});
+			if (pos == 0){
+				$('.filter').css('display','block');
+				$('.sidebtn').css('transform',' rotate(180deg)');
+			}else{
+				$('.filter').css('display','none');
+				$('.sidebtn').css('transform',' rotate(0deg)');
+			}
+		});
+
+        $('.article').find('img').parent().css('overflow-x','auto');
+	});
+	</script>
+</body>
+</html>

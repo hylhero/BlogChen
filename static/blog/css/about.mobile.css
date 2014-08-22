@@ -1,0 +1,35 @@
+.about-motto{
+    text-align: center;
+    width:100%;
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+.about-title{
+    text-align:center;
+    font-size:1.08em;
+    padding:6px 10px;
+    color: #fff;
+}
+.gradient-left{
+    background: -moz-linear-gradient(left, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: -webkit-linear-gradient(left, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: -ms-linear-gradient(left, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: linear-gradient(left, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+}
+.gradient-right{
+    background: #004b8b;
+	background: -moz-linear-gradient(right, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: -webkit-linear-gradient(right, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: -ms-linear-gradient(right, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+	background: linear-gradient(right, #008B77 0px, #2BaB97 40%, #3BbBa7 100%) repeat scroll 0% 0% transparent;
+}
+.about-one{
+    padding-top: 20px;
+}
+.about-one span{
+    display: block;
+    padding: 6px 10px 0px;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4em;
+}

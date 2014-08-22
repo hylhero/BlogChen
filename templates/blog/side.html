@@ -1,0 +1,68 @@
+{% load filters %}
+<div class="left_list">
+
+{% if newblogs %}
+<div class="list theme_pb_Color">
+    <h4 class="theme_bk_Color">最新文章</h4>
+    <ul>
+        {% for nblog in newblogs %}
+        <li>
+            <a class="ta-c"href="{% url 'blog:detail' nblog.id %}">{{ nblog.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if categorys %}
+<div class="list theme_pb_Color">
+    <h4 class="theme_bk_Color">文章分类</h4>
+    <ul>
+        {% for cate in categorys %}
+        <li>
+            <a class="ta-c"href="{% url 'blog:catelist' cate.id %}">{{ cate.category_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if reads %}
+<div class="list theme_pb_Color">
+    <h4 class="theme_bk_Color">阅读排行</h4>
+    <ul>
+        {% for read in reads %}
+        <li>
+            <a class="ta-c"href="{% url 'blog:detail' read.id %}">{{ read.title }}<span>[{{ read.read_num }}]</span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if comments %}
+<div class="list theme_pb_Color">
+    <h4 class="theme_bk_Color">热门评论</h4>
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <a class="ta-c"href="{% url 'blog:detail' comment.id %}#comment_list">{{ comment.title  }}<span>[{{ comment.comment_num }}]</span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if links %}
+<div class="list theme_pb_Color">
+    <h4 class="theme_bk_Color">友情链接</h4>
+    <ul>
+        {% for link in links %}
+        <li>
+            <a href="{{ link.site_url }}"class="ta-c">{{ link.site_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+</div>

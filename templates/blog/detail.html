@@ -1,0 +1,67 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}{{ blog.title }}-Chen{% endblock %}
+{% block extra_meta %}
+	{{ block.super }}
+	<meta name="description" content="{{ blog.title }} {% for tag in blog.tags.all %} {{ tag.tag_name }} {% endfor %}">
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+	<link href="{% static 'syntaxhighlighter/css/shCore.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'syntaxhighlighter/css/shThemeDefault.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+{#	<script src="{% static 'site/placeholder.js' %}"></script>#}
+	<script src="{% static 'syntaxhighlighter/js/XRegExp.js' %}" type="text/javascript"></script>
+	<script src="{% static 'syntaxhighlighter/js/shCore.js' %}" type="text/javascript"></script>
+	<script src="{% static 'syntaxhighlighter/js/shAutoloader.js' %}" type="text/javascript"></script>
+	<script src="{% static 'site/syntaxhighlighter_autoloads.js' %}" type="text/javascript"></script>
+    <script src="{% static 'blog/js/comment.js' %}" type="text/javascript"></script>
+	<script>
+{#		$(document).ready(function(){#}
+{#			$.fn.placeholder();#}
+{#		})#}
+	</script>
+{% endblock %}
+{% block nav_blog %}focus{% endblock %}
+{% block container %}
+    <div class="container">
+        <div style="margin-bottom: 24px;" class="theme_pb_Color">
+            <!-- 博客正文 -->
+            <div class="article theme_bd_Color">
+                {% include 'blog/article.html' %}
+                <!-- 文章浏览信息部分 -->
+                <div class="article_footer"style="float:right;padding-bottom:6px;margin-right:6px;">
+                    <span style="font-size:14px;color:#5E5E5E;">评论[{{ blog.comment_num }}]</span>
+                    <span style="font-size:14px;color:#5E5E5E;">阅读[{{ blog.read_num }}]</span>
+                </div>
+            </div>
+            <!-- 文章导航 -->
+			<ul class="article_next_prev">
+                {% if pre_blog %}
+				    <li>上一篇：<a href="{% url 'blog:detail' pre_blog.id %}">{{ pre_blog.title }}</a></li>
+                {% endif %}
+                {% if next_blog %}
+				<li>下一篇：<a href="{% url 'blog:detail' next_blog.id %}">{{ next_blog.title }}</a></li>
+                {% endif %}
+			</ul>
+        </div>
+{#        评论列表#}
+
+            <!-- 评论列表Begin -->
+            <div id="comment_list" class="comment_list theme_pb_Color">
+                {% if comments %}<h4>所有评论</h4>{% endif %}
+                <ul class="com_list">
+                    {% for comment in comments %}
+                        {% include 'blog/comlist.html' %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- 评论列表End -->
+        {#评论#}
+        {% include 'blog/comment.html' %}
+    </div>
+
+{% endblock %}

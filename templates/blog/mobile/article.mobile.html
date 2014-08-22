@@ -1,0 +1,21 @@
+{% load filters %}
+<div class="article_head">
+    <div class="article_title">
+        <a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a>
+    </div>
+    <div class="tags">
+        <span style="background:#bbb;"><a href="{% url 'blog:catelist' blog.category.id %}">{{ blog.category }}</a></span>
+        <span>
+        {% for tag in blog.tags.all %}
+            <a href="{% url 'blog:taglist' tag.id %}">{{ tag.tag_name }}</a>
+        {% endfor %}
+        </span>
+    </div>
+</div>
+<div class="article_body">
+    {% if SHOWSHORTBLOG %}
+        {{ blog.content|shortblog }}
+    {% else %}
+        {{ blog.content|safe }}
+    {% endif %}
+</div>

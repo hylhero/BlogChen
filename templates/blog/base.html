@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name="author" content="d9chen">
+	<title>{% block title %}cheerfullchen{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static "blog/css/base.css" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog/images/logo.png' %}">
+    {% block extra_meta %}
+        <meta name="keywords" content="cheerfullchen d9chen cheer cheerfull 个人博客 Django">
+    {% endblock %}
+    {% block extra_link %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+</head>
+<body>
+	<!-- 页面头部Begin -->
+	<div class="header theme_bk_Color">
+		<div class="header_main">
+            <div class="logo">
+                <a class="logoindex" href="/">
+                    <img src="{% static 'blog/images/logo-2.png' %}"/>
+                </a>
+            </div>
+			<div class="right_nav">
+				<a class="{% block nav_index %}{% endblock %}" href="/">首页</a>
+				<a class="{% block nav_blog %}{% endblock %}" href="{% url 'blog:index' %}">博客</a>
+				<a class="{% block nav_about %}{% endblock %}" href="/about">关于</a>
+			</div>
+		</div>
+	</div>
+	<!-- 页面头部End -->
+    {% block container %}
+    {% endblock %}
+	<!-- 页脚footerBegin -->
+	<div class="footer theme_bk_Color">
+		<div class="footer_main">
+			<div class="f_left_copyright">
+				<span>
+					Desigend by <b>cheer</b>| Copyright 2014
+				</span>
+			</div>
+			<div class="f_right_nav">
+				<a href="/"class="backgound-color:#1D8DCD;">返回首页</a>
+				<a href="/about">关于作者</a>
+				<a href="/admin">管理登录</a>
+			</div>
+		</div>
+	</div>
+	<!-- 页脚footerEnd -->
+</body>
+</html>

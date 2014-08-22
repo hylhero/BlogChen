@@ -1,0 +1,63 @@
+{% extends "blog/base.html" %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+{% block title %}博客后台登录{% endblock %}
+{% block extra_meta %}
+    {{ block.super }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale:1.2">
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+{% endblock %}
+{#<form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}#}
+{#  <div class="form-row">#}
+{#    {% if not form.this_is_the_login_form.errors %}{{ form.username.errors }}{% endif %}#}
+{#    {{ form.username|attr:"placeholder:用户名" }}#}
+{#  </div>#}
+{#  <div class="form-row">#}
+{#    {% if not form.this_is_the_login_form.errors %}{{ form.password.errors }}{% endif %}#}
+{#    {{ form.password|attr:"placeholder:密码" }}#}
+{#    <input type="hidden" name="this_is_the_login_form" value="1" />#}
+{#    <input type="hidden" name="next" value="{{ next }}" />#}
+{#  </div>#}
+{#  {% url 'admin_password_reset' as password_reset_url %}#}
+{#  {% if password_reset_url %}#}
+{#  <div class="password-reset-link">#}
+{#    <a href="{{ password_reset_url }}">{% trans 'Forgotten your password or username?' %}</a>#}
+{#  </div>#}
+{#  {% endif %}#}
+{#  <div class="submit-row">#}
+{#    <label>&nbsp;</label><input type="submit" value="{% trans 'Log in' %}" />#}
+{#  </div>#}
+{#</form>#}
+{##}
+{#{% endblock %}#}
+{% block container %}
+    <div class="container">
+        <div class="login_box">
+            <div class="login_title">后台管理登录</div>
+            <div class="login_form">
+                <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+                    <div class="input_box">
+        {#                <input class="login_username"type="text"placeholder="用户名"></input>#}
+                        {{ form.username|attr:"class:login_username"|attr:"placeholder:用户名" }}
+                    </div>
+                    <div class="input_box">
+        {#                <input class="login_passwd"type="password"placeholder="密码"></input>#}
+                        {{ form.password|attr:"class:login_passwd"|attr:"placeholder:密码" }}
+                    </div>
+                     <input type="hidden" name="this_is_the_login_form" value="1" />
+                     <input type="hidden" name="next" value="{{ next }}" />
+                    <div class="input_box">
+                        <button class="login_btn" type="submit" id="login_submit">登录</button>
+                    </div>
+                    {% if form.errors %}
+                       <div class="login_error">
+                            登录失败：用户名或密码错误，请重新输入。
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

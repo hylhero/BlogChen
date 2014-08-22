@@ -1,0 +1,96 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: "Courier New","Microsoft YaHei";
+}
+header{
+	position: fixed;
+	width: 100%;
+	background-color: #004B8B;
+	color: #FFF;
+}
+header .header_main{
+	margin: 0px auto;
+	min-width: 1000px;
+}
+header .logoindex{
+	float: left;
+	display: block;
+	width: 144px;
+	height: 44px;
+	cursor: pointer;
+	margin-left: 16px;
+}
+header .logoindex:hover{
+	background-color: #0f4f8f;
+}
+header .right_nav{
+	float: right;
+	margin-right: 20px;
+}
+header .right_nav a{
+	text-decoration: none;
+	font-size: 18px;
+	display: inline-block;
+	padding: 10px 22px;
+	transition: background-color 0.15s ease 0s;
+	float: left;
+	color: #FFF;
+}
+header .right_nav a:hover{
+	background-color: #EEE;
+	color: #0f4f8f;
+}
+/*左侧菜单栏*/
+.menu_nav{
+	position: absolute;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	font-weight: normal;
+	line-height: 20px;
+	top: 44px;
+	left: 0px;
+	bottom: 0px;
+	width: 200px;
+	background-color: #EFEFEF;
+	overflow: auto;
+}
+.menu_nav ul{
+	padding-left: 24px;
+	padding-right: 15px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.menu_nav ul a{
+	color: #0E0E0E;
+	padding: 3px 15px;
+	display: block;
+	cursor: pointer;
+	margin-left: -15px;
+	margin-right: -15px;
+	text-decoration: none;
+}
+.menu_nav ul a:hover{
+	background-color: #BEBEBE;
+}
+.menu_nav .menu .list_menu a{
+	margin-left: -6px;
+}
+.menu_nav .menu .m_title i{
+	float: right;
+	display: block;
+	width: 13px;
+	height: 13px;
+	margin-top: 4px;
+	background-image: url('../images/arrow.png');
+
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg); 
+	-o-transform: rotate(90deg); 
+	-ms-transform: rotate(90deg); 
+}
+.manage_interface{
+	float: left;
+	margin-left: 200px;
+	margin-top: 44px;
+}

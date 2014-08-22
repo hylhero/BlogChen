@@ -1,0 +1,54 @@
+{% extends 'blog/mobile/base.mobile.html' %}
+{% load staticfiles %}
+{% block title %}Blog-Chen{% endblock %}
+{% block extra_meta %}
+	{{ block.super }}
+	<meta name="description" content="{% for blog in blogs %} {{ blog.title }} {% endfor %}">
+{% endblock %}
+{% block extra_link %}
+	<link href="{% static 'syntaxhighlighter/css/shCore.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'syntaxhighlighter/css/shThemeDefault.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+	<script src="{% static 'syntaxhighlighter/js/XRegExp.js' %}" type="text/javascript"></script>
+	<script src="{% static 'syntaxhighlighter/js/shCore.js' %}" type="text/javascript"></script>
+	<script src="{% static 'syntaxhighlighter/js/shAutoloader.js' %}" type="text/javascript"></script>
+	<script src="{% static 'site/syntaxhighlighter_autoloads.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block nav_blog %}focus{% endblock %}
+{% block container %}
+    <!-- 博文 Begin -->
+    {% for blog in blogs %}
+        <div class="article">
+             {% include 'blog/mobile/article.mobile.html' %}
+            <div class="article_foot">
+                <span class="article_time">
+                    <a href="javascript:void(0);">{{ blog.publish_time|date:"Y-m-d" }}</a>
+                </span>
+                <span class="article_info">
+                    <a href="{% url 'blog:detail' blog.id %}#comment">评论[{{ blog.comment_num }}]</a>
+                    <a href="{% url 'blog:detail' blog.id %}">阅读全文[{{ blog.read_num }}]</a>
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+	<!-- 博文 End -->
+    {% if not blogs %}
+        <p style="text-align:center;color:red;">啊哦!没有相关的内容哟,请尝试其他的吧.</p>
+    {% else %}
+    <!-- 页码 Begin -->
+	<div class="pagination">
+        {% if blogs.has_previous %}
+            <a href="?page={{ 1 }}">首页</a>
+            <a href="?page={{ blogs.previous_page_number }}">上一页</a>
+        {% endif %}
+		    <a class="pageon"{% if not blogs.has_next %}style="float:right;"{% endif %}>第{{ blogs.number }}页</a>
+        {% if blogs.has_next %}
+            <a href="?page={{ blogs.paginator.num_pages }}"style="float:right;">尾页</a>
+            <a href="?page={{ blogs.next_page_number }}"style="float:right;">下一页</a>
+        {% endif %}
+	</div>
+	<!-- 页码 End -->
+    {% endif %}
+{% endblock %}

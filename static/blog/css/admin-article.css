@@ -1,0 +1,9 @@
+.article_list_grid{
+
+}
+.article_list_grid table,tr,th{
+	border: 1px solid #F0F0F0;
+	color: #808080;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}

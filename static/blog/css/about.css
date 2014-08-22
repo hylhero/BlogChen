@@ -1,0 +1,77 @@
+.container{
+	margin: 0px auto;
+	width: 1000px;
+	padding-top: 60px;
+	padding-bottom: 160px;
+}
+#ab_title{
+	font-size: 20px;
+    color: #555;
+}
+.about_all span{
+    display: block;
+    padding: 10px 36px 0px;
+    font-size: 16px;
+    color: #555;
+    line-height: 28px;
+}
+.about_one{
+	padding-top: 36px;
+}
+.about_all h4{
+	background: #004b8b;
+    color: #FFF;
+	padding: 10px 20px;
+	font-family: "楷体";
+	font-size: 20px;
+}
+#ab_contact .h4_contact{
+    background-color: #eee;
+    color: #555;
+    text-align: center;
+}
+.about_all .h4_left{
+	background: -moz-linear-gradient(left, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: -webkit-linear-gradient(left, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: -ms-linear-gradient(left, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: linear-gradient(left, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+    text-align: left;
+}
+.about_all .h4_right{
+	background: #004b8b;
+	background: -moz-linear-gradient(right, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: -webkit-linear-gradient(right, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: -ms-linear-gradient(right, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+	background: linear-gradient(right, #008B77 0px, #1B9B87 40%, #2BAB97 100%) repeat scroll 0% 0% transparent;
+    text-align: right;
+}
+#ab_contact .contact_way a{
+    float:left;
+    color: #008b77;
+}
+#ab_contact .contact_way a div{
+    float:left;
+    font-size: 20px;
+    height: 45px;
+    line-height: 45px;
+}
+#ab_contact .contact_way a:hover{
+    background-color: #eee;
+}
+#ab_else ul{
+    padding: 10px 36px 0px;
+    overflow: hidden;
+    color : #555;
+}
+#ab_else ul li{
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 28px;
+}
+#ab_else ul li .ab_n{
+    float: left;
+}
+#ab_else ul li .ab_v{
+    float:left;
+    margin-left:20px;
+}

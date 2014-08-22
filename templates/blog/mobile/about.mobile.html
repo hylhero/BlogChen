@@ -1,0 +1,45 @@
+{% extends 'blog/mobile/base.mobile.html' %}
+{% load staticfiles %}
+{% block title %}About - Chen{% endblock %}
+{% block extra_meta %}
+	{{ block.super }}
+	<meta name="description" content="{% for blog in blogs %} {{ blog.title }} {% endfor %}">
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/about.mobile.css' %}">
+{% endblock %}
+{% block extra_js %}
+{% endblock %}
+{% block nav_about %}focus{% endblock %}
+{% block container %}
+    <!-- motto -->
+    <div class="about-motto">
+        <span>骐骥一跃不能十步,驽马十驾功在不舍.</span>
+    </div>
+    <!-- about me -->
+    <div class="about-me about-one">
+        <div class="gradient-left about-title">
+            个人简介
+        </div>
+        <div class="me-info">
+            <span>我是一个对IT技术有着强烈兴趣,喜欢C语言和Python的程序员.</span>
+            <span>数学专业出身,曾经痴迷于数学,后被C语言所吸引,陷入了对编程的狂热之中.</span>
+            <span>接触编程时间虽短,但对编程的热度不断攀升.从C语言到C++,再到Python;从数据结构到算法导论;
+            从终端到GUI;从本地到多线程网络;这一路走来,不求走的快,但求走的稳。</span>
+        </div>
+    </div>
+    <div class="about-blog about-one">
+        <div class="gradient-right about-title">
+            关于博客
+        </div>
+        <div class="blog-info">
+            <span>首先要感谢<a style="color: rgb(0, 176, 240); text-decoration: underline;" target="_blank" href="http://dannysite.com/">DannySite</a>,
+                他的博客和他的源代码给了我很多帮助.
+            </span>
+            <span>喜欢扁平化的风格,但不懂界面设计,只能借鉴他人优秀的设计,按照自己的口味重新打造.</span>
+            <span>喜欢Python语法的简洁与模块的强大,亦是为了巩固与锻炼,后端采用Django开发。边学边练,其乐无穷.</span>
+            <span>个人推崇复制模式,但厌恶粘贴模式.喜欢阅读、借鉴优秀的代码,编写自己的代码.</span>
+            <span>网站并未完结,正在持续开发优化中.</span>
+        </div>
+    </div>
+{% endblock %}

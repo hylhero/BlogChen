@@ -1,0 +1,139 @@
+.theme_bk_Color{
+	/*background-color: #004B8B;*/
+    background-color: #008B88;
+}
+.theme_bd_Color{
+	border-color: #008B77;
+}
+.theme_pb_Color{
+    background-color: #FdFdFd;
+}
+.ta-c{
+	text-align: center;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+a{
+	text-decoration: none;
+}
+html{
+    height:100%;
+}
+body{
+	font-family: "Courier New","Microsoft YaHei";
+	min-height: 100%;
+	height:100% auto !important;
+    position: relative;
+}
+/*header*/
+.header
+{
+	position: fixed;
+	width: 100%;
+	/*min-width: 1000px;*/
+	z-index: 999;
+}
+.header
+ .header_main{
+    width:100%;
+	max-width: 1000px;
+	margin: 0px auto;
+}
+.header
+ .logo{
+	float: left;
+    width:40%;
+}
+.header .logoindex{
+    width:100%;
+	display: block;
+	cursor: pointer;
+}
+.header
+ .logoindex:hover{
+	opacity:0.8;
+}
+.header .logoindex img{
+    float:left;
+    width: 100%;
+	max-width: 144px;
+	height: 44px;
+}
+.header
+ .right_nav{
+	float: right;
+    width:60%;
+    max-width: 239px;
+}
+.header
+ .right_nav a{
+	text-decoration: none;
+	font-size: 18px;
+	display: inline-block;
+	/*padding: 12px 22px;*/
+    padding-top: 18px;
+    padding-bottom: 6px;
+	transition: background-color 0.15s ease 0s;
+    width:33.3333%;
+	float: left;
+    text-align: center;
+	color: #FFF;
+}
+.header
+ .right_nav a:hover{
+	background-color: #EEE;
+}
+.header
+ .right_nav .focus{
+	background-color: #EEE;
+	color: #1D8DCD;
+}
+
+/*footer*/
+.footer
+{
+	z-index: 9999;
+	width: 100%;
+	/*min-width: 1000px;*/
+	border-top: 2px solid #eee;
+    bottom: 0px;
+	position: absolute;
+    font-size: 16px;
+}
+.footer
+ .footer_main{
+	margin: 0px auto;
+    width:100%;
+	max-width: 1000px;
+}
+.footer
+ .footer_main .f_right_nav{
+	float: right;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+.footer
+ .footer_main .f_right_nav a{
+	font-size: 14px;
+	display: inline-block;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	color: #FFF;
+}
+.footer
+ .footer_main .f_right_nav a:hover{
+	/*color: #1D8DCD;*/
+    opacity:0.8;
+}
+.footer
+ .footer_main .f_left_copyright{
+	color: #FFF;
+	float: left;
+	margin-top: 22px;
+    text-align: center;
+}

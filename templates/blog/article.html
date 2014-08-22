@@ -1,0 +1,36 @@
+{% load filters %}
+<table class="article_header theme_bd_Color"  border="0" cellpadding="0" cellspacing="0"style="table-layout: fixed;width: 100%;">
+    <tbody>
+        <tr class="article_header">
+            <td class="article_info theme_bd_Color">
+                <!-- Blog标题 -->
+                <p class="title">
+                    <a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a>
+                </p>
+                <!-- 标签 -->
+                <div class="tag">
+                    <span>
+                        <a href="{% url 'blog:catelist' blog.category.id %}">{{ blog.category }}</a>
+                        <i></i>
+                        {% for tag in blog.tags.all %}
+                            <a href="{% url 'blog:taglist' tag.id %}">{{ tag.tag_name }}</a>
+                        {% endfor %}
+                    </span>
+                </div>
+            </td>
+            <td class="article_time theme_bk_Color">
+                <span class="time_day">{{ blog.publish_time|date:"d" }}</span>
+                <span class="time_month">{{ blog.publish_time|date:"M" }}</span>
+                <span class="time_year">{{ blog.publish_time|date:"Y" }}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="article_body"style="clear:both;">
+    {% if SHOWSHORTBLOG %}
+        {{ blog.content|shortblog }}
+    {% else %}
+        {{ blog.content|safe }}
+    {% endif %}
+</div>
+

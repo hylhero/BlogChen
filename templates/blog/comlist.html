@@ -1,0 +1,17 @@
+{% load filters %}
+{% load staticfiles %}
+<li class="one_comment">
+    <a class="com_head_img" href="javascript:void(0);"><img src="{% static 'blog/images/headimg/'%}{{ comment.user.photo }}"></a>
+    <div class="one_com_body">
+        <div class="one_com_title">
+            <a class="com_user"target="_blank" {% if comment.user.website %}href="{{ comment.user.website }}"{% endif %}>{{ comment.user.name }}</a>
+            <span class="com_time">{{ comment.comment_time|formattime }}</span>
+        </div>
+        <div class="one_com_content">
+            <p>{{ comment.content }}</p>
+        </div>
+    </div>
+    <ul>
+
+    </ul>
+</li>
