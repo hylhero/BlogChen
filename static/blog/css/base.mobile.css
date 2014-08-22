@@ -8,7 +8,7 @@ html {
 }
 body{
 	font-family: "Courier New","Microsoft YaHei";
-	min-width: 280px;
+	min-width: 300px;
     position: relative;
     min-height: 100%;
 }
@@ -168,10 +168,9 @@ a{
 /*旁边导航条*/
 .sidenav{
 	position: fixed;
-	right: 0px;
+	right: -200px;
 	top: 18%;
-	width: 0px;
-	max-width: 200px;
+	width: 200px;
 	background: #fefefe;
 	max-height: 72%;
 	font-size: 1.3em;
@@ -224,6 +223,7 @@ a{
 	overflow-x: hidden;
 	overflow-y: auto;
 	height: 100%;
+	padding-right: 30px
 }
 .filter{
 	position: fixed;

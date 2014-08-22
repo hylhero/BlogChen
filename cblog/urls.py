@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.views.home',name='home'),
     url(r'^blog/',include('blog.urls',namespace='blog')),
     url(r'^about/$', 'blog.views.about',name='about'),
+    url(r'feedback/$', 'blog.views.feedback', name='feedback'),
 
 )
 urlpatterns += patterns('',

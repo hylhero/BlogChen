@@ -1,5 +1,6 @@
 {% extends 'blog/mobile/base.mobile.html' %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block title %}About - Chen{% endblock %}
 {% block extra_meta %}
 	{{ block.super }}
@@ -9,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/about.mobile.css' %}">
 {% endblock %}
 {% block extra_js %}
+    <script type="text/javascript"src="{% static 'blog/js/feedback.js' %}"></script>
 {% endblock %}
 {% block nav_about %}focus{% endblock %}
 {% block container %}
@@ -42,4 +44,52 @@
             <span>网站并未完结,正在持续开发优化中.</span>
         </div>
     </div>
+    <div class="about-contact about-one">
+        <div class="about-title">
+            与我联系
+        </div>
+        <div class="contact-info">
+            <a id="qq" href="javascript:void(0);">
+                <div><img src="{% static 'blog/images/qq.png' %}"></div>
+                <div><p>1791283245</p></div>
+            </a>
+            <a id="mail"href="mailto:d9chen@outlook.com;"style="float:right;">
+                <div><img src="{% static 'blog/images/mail-2.png' %}"></div>
+                <div><p>d9chen@outlook.com</p></div>
+            </a>
+        </div>
+    </div>
+    <!-- 反馈 Begin -->
+    <div class="about-feedback about-one">
+        <div class="gradient-left about-title">反馈建议</div>
+        <div class="feedback-info">
+            <form  action="{% url 'feedback' %}" id="id_feedback_form" method="post" method="post">
+                {% csrf_token %}
+                <div class="feedform">
+                    <div class="feed-user">
+                        {{ form.username|attr:"id:id_feedback_user"|attr:"placeholder:你的昵称" }}
+{#                        <input type="text"placeholder="你的昵称" name="ausername">#}
+                    </div>
+                    <div class="feed-mail">
+                        {{ form.useremail|attr:"id:id_feedback_email"|attr:"placeholder:你的邮箱" }}
+{#                        <input type="email"placeholder="你的邮箱"name="buseremail">#}
+                    </div>
+                    <div class="feed-words">
+                        {{ form.suggestion|attr:"id:id_feedback_suggestion"|attr:"placeholder:你的反馈意见" }}
+{#                        <textarea placeholder="你的反馈意见"rows="10"cols="40"name="cusercomment"></textarea>#}
+                    </div>
+                    <div class="feed-submit">
+                        <button id="id_feedback_submit" type="submit">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="filter"></div>
+    <div class="error">
+        <div class="error-title">表单填写错误</div>
+        <p class="error-body">请输入昵称</p>
+        <button id="id_error_ok">确定</button>
+    </div>
+    <!-- 反馈 End -->
 {% endblock %}

@@ -18,7 +18,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils import timezone
 
 from blog.models import Blog, Tag, Category, Link, User, Comment
-from forms import CommentForm
+from forms import CommentForm, FeedBackForm
 import random
 
 from django.core.mail import send_mail
@@ -32,7 +32,7 @@ import re
 user_device_re = re.compile(r'(mobile|iphone|android|iemobile)')
 
 def get_user_device(request):
-    # return 'MOBILE'
+    return 'MOBILE'
     device = request.session.get('USER_VIEW_DEVICE','UNKNOWN_VIEW_DEVICE')
     if device != 'UNKNOWN_VIEW_DEVICE':
         return device
@@ -249,5 +249,19 @@ def about(request):
     device  = get_user_device(request)
     template = 'blog/about.html' if device == 'PC' else 'blog/mobile/about.mobile.html'
 
-    return render_to_response(template,{},
+    form    = FeedBackForm()
+    return render_to_response(template,{'form':form},
                               context_instance=RequestContext(request))
+
+def feedback(request):
+    
+    if request.is_ajax():
+            form = FeedBackForm(request.POST)
+            if form.is_valid():
+                feedback = form.save(commit=False)
+                feedback.save()
+                return ResponseMsg(True,u'感谢你的反馈建议.我会及时进行改进.')
+            else:
+               return ResponseMsg(False,form.errors.popitem()[1])
+    else:
+        raise Http404
