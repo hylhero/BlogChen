@@ -32,7 +32,7 @@ import re
 user_device_re = re.compile(r'(mobile|iphone|android|iemobile)')
 
 def get_user_device(request):
-    return 'MOBILE'
+    # return 'MOBILE'
     device = request.session.get('USER_VIEW_DEVICE','UNKNOWN_VIEW_DEVICE')
     if device != 'UNKNOWN_VIEW_DEVICE':
         return device
