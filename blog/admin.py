@@ -3,7 +3,7 @@
 from django.contrib import admin
 
 # 2014-7-3 17:00 by cheer
-from blog.models import Tag, Category, User, Blog, Link, Comment, UploadFileModel, FeedBackModel
+from blog.models import Tag, Category, User, Blog, Link, Comment, UploadFileModel, FeedBackModel,UserVisitFoot
 
 class UserAdmin(admin.ModelAdmin):
     list_display        = ('name','email','website','photo','sex')
@@ -35,6 +35,9 @@ class FeedBackAdmin(admin.ModelAdmin):
     list_display        = ('username', 'useremail', 'suggestion', 'feedback_time')
     list_per_page       = 10
 
+class UserVisitFootAdmin(admin.ModelAdmin):
+    list_display        = ('userIP', 'visitednum', 'visitedpre', 'visitedlatest')
+    list_per_page       = 10
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Blog, BlogAdmin)
@@ -44,3 +47,4 @@ admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(UploadFileModel, UploadFileAdmin)
 admin.site.register(FeedBackModel, FeedBackAdmin)
+admin.site.register(UserVisitFoot, UserVisitFootAdmin)

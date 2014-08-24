@@ -17,7 +17,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from django.utils import timezone
 
-from blog.models import Blog, Tag, Category, Link, User, Comment
+from blog.models import Blog, Tag, Category, Link, User, Comment,UserVisitFoot
 from forms import CommentForm, FeedBackForm
 import random
 
@@ -68,9 +68,21 @@ def get_user_device(request):
 #     request.session['USER_VIEW_DEVICE'] = 'PC'
 #     return 'PC'
 
+def get_user_ip(request):
+    return request.META.get('REMOTE_ADDR','0.0.0.0')
+def save_user_visitfoot(request):
+    ip = get_user_ip(request)
+    print ip
+    try:
+        userfoot = UserVisitFoot.objects.get(userIP = ip)
+    except:
+        userfoot = UserVisitFoot(userIP = ip)
+
+    userfoot.save()
+
 def home(request):
     device  = 'PC'
-
+    save_user_visitfoot(request) # 保存用户足迹
     print 'home'
     return HttpResponseRedirect('/blog')
 
