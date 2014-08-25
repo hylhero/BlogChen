@@ -6,6 +6,8 @@ from DjangoUeditor.models import UEditorField
 
 import datetime
 import os
+from utils import get_ip_location
+
 class Tag(models.Model):
     tag_name            = models.CharField(u'名称',max_length=30)
 
@@ -147,8 +149,8 @@ class FeedBackModel(models.Model):
     class Meta:
         ordering            = ['-feedback_time']
         db_table            = 'blog_feedback'
-        verbose_name        = u'反馈意见'
-        verbose_name_plural = u'反馈意见'
+        verbose_name        = u'反馈'
+        verbose_name_plural = u'反馈'
 
 # 用户访问记录
 class UserVisitFoot(models.Model):
@@ -156,6 +158,7 @@ class UserVisitFoot(models.Model):
     visitednum              = models.IntegerField(u'访问次数',default=0)
     visitedpre              = models.DateTimeField(u'上一次访问时间',editable=False)
     visitedlatest           = models.DateTimeField(u'最近访问时间',editable=False,auto_now_add=True)
+    address                 = models.CharField(u'归属地',max_length=60)
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -173,6 +176,9 @@ class UserVisitFoot(models.Model):
                 self.visitednum += 1
                 self.visitedpre = self.visitedlatest
             self.visitedlatest = timenow
+
+            if self.userIP and not self.address:
+                self.address = get_ip_location(self.userIP)
 
         return super(UserVisitFoot, self).save(*args, **kwargs)
     def __unicode__(self):

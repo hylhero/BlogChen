@@ -36,7 +36,7 @@ class FeedBackAdmin(admin.ModelAdmin):
     list_per_page       = 10
 
 class UserVisitFootAdmin(admin.ModelAdmin):
-    list_display        = ('userIP', 'visitednum', 'visitedpre', 'visitedlatest')
+    list_display        = ('userIP', 'visitednum', 'visitedpre', 'visitedlatest','address')
     list_per_page       = 10
 
 admin.site.register(User, UserAdmin)
