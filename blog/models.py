@@ -158,7 +158,7 @@ class UserVisitFoot(models.Model):
     visitednum              = models.IntegerField(u'访问次数',default=0)
     visitedpre              = models.DateTimeField(u'上一次访问时间',editable=False)
     visitedlatest           = models.DateTimeField(u'最近访问时间',editable=False,auto_now_add=True)
-    address                 = models.CharField(u'归属地',max_length=60)
+    address                 = models.CharField(u'归属地',max_length=60,default ='')
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -177,8 +177,10 @@ class UserVisitFoot(models.Model):
                 self.visitedpre = self.visitedlatest
             self.visitedlatest = timenow
 
-            if self.userIP and not self.address:
+            print  'save user visit foot:::',self.userIP,self.address
+            if self.userIP and (self.address == '' or self.address == None):
                 self.address = get_ip_location(self.userIP)
+            print  'save user visit foot:::',self.userIP,self.address
 
         return super(UserVisitFoot, self).save(*args, **kwargs)
     def __unicode__(self):

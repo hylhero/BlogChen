@@ -54,21 +54,29 @@
  <!-- footer End -->
     <script type="text/javascript">
 	$(document).ready(function(){
+
+        var sidebtn_click = false;
         $('.sidebtn').click(function(){
-			var pos = $('.sidenav').css('right');
-			pos = parseInt(pos);
 
-			$('.sidenav').stop().animate({right:-200 - pos},500,function(){
+            sidebtn_click = sidebtn_click ? false : true;
 
-			});
-			if (pos == -200){
-				$('.filter').css('display','block');
-				$('.sidebtn').css('transform',' rotate(180deg)');
-			}else{
-				$('.filter').css('display','none');
-				$('.sidebtn').css('transform',' rotate(0deg)');
-			}
-		});
+            var pos = 0;
+            if (sidebtn_click){
+                pos = 0;
+            }else{
+                pos = -200;
+            }
+
+            $('.sidenav').stop().animate({right:pos},500,function(){
+            });
+            if (pos == 0){
+                $('.filter').css('display','block');
+                $('.sidebtn').css('transform',' rotate(180deg)');
+            }else{
+                $('.filter').css('display','none');
+                $('.sidebtn').css('transform',' rotate(0deg)');
+            }
+        });
 
         $('.article').find('img').parent().css('overflow-x','auto');
 	});

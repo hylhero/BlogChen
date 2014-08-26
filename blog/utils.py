@@ -54,12 +54,21 @@ def get_user_ip(request):
 
 def get_ip_location(ip):
     if ip == '0.0.0.0':
-        return None
+        return ''
     try :
         url = 'http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip
         location = urllib2.urlopen(url).read()
         location = json.loads(location)
         location = location['data']
-        return location['country']+location['region']+location['area']+location['isp']
+        address  = ''
+        if location['country'] != '':
+            address += location['country'] + ' '
+        if location['region'] != '':
+            address += location['region'] + ' '
+        if location['area'] != '':
+            address += location['area'] + ''
+        if location['isp'] != '':
+            address += location['isp']
+        return address
     except :
-        return None
+        return ''
