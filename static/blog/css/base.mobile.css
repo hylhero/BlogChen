@@ -160,10 +160,28 @@ a{
     z-index: 600;
 }
 .footer .footer_user{
-	font-size: 1em;
+	font-size: 0.82em;
 }
 .footer .footer_copyright{
+	font-size: 0.72em;
+}
+.footer p a{
 	font-size: 0.9em;
+	color: #333;
+}
+.footer p i{
+	width: 1px ;
+	background-color: #555;
+	height: 0.9em;
+}
+.footer p .on{
+	color: #008b77;
+}
+.footer p #computer{
+	margin-left: 4px;
+}
+.footer p #phone{
+	margin-right: 4px;
 }
 /*旁边导航条*/
 .sidenav{
