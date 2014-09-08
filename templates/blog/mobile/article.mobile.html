@@ -14,7 +14,7 @@
 </div>
 <div class="article_body">
     {% if SHOWSHORTBLOG %}
-        {{ blog.content|shortblog }}
+        {{ blog.content|shortblog:5 }}
     {% else %}
         {{ blog.content|safe }}
     {% endif %}

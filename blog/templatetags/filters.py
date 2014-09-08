@@ -45,12 +45,12 @@ register.filter('formattime',formattime)
 from django.utils.safestring import mark_safe
 
 @register.tag
-def shortblog(content):
+def shortblog(content,max_linenum = 10):
     # return blog.replace('i','I')
     line = 0
     i = 0
     while i < len(content):
-        if line == 10:
+        if line >= max_linenum:
             html = content[0:i]
             html = addtags(html)
             return mark_safe(html)
