@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'blog',
     'DjangoUeditor',
     'mcaptcha',
+    'chat',
 )
 
 MIDDLEWARE_CLASSES = (

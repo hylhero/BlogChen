@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>ChatRoom</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale:1.2">
+	<meta name="description" content="d9chen的博客。Python Django多人聊天室。">
+	<link rel="stylesheet" type="text/css" href="{% static 'chat/css/chat.css' %}">
+	<script type="text/javascript" src="{% static 'chat/js/jquery.min.js' %}"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var ws = new WebSocket('ws://192.168.191.1:8000/chat/djWebSocket/');
+        ws.onopen = function () {
+        	console.log('WebSocket open');
+        };
+        ws.onmessage = function (e) {
+           console.log('message: ' + e.data);
+           alert(e.data);
+        };
+
+        $('.chat-send').click(function () {
+            ws.send($(".chat-content").val());
+        });
+	})
+	// $(document).ready(function(){
+	// 	function fillZero(num){
+	// 		if (num < 10){
+	// 			num = '0'+num;
+	// 		}
+	// 		return num;
+	// 	}
+
+	// 	var ws = new WebSocket('ws://192.168.191.1:8000/chat/djWebSocket');
+	// 	// var ws = new WebSocket('{{ url }}');
+	// 	// 回调函数,获取服务器数据
+	// 	var ID_USER = '{{ userid }}';
+	// 	var NAME = prompt("请输入你的昵称","Passerby");
+	// 	$('.chat_username').text(NAME);
+	// 	// 接收消息
+	// 	ws.onmessage = function(msg){
+	// 		alert(msg);
+	// 		msg =  $.parseJSON(msg.data);
+	// 		var userid = msg['userid'];
+	// 		var name = msg['name']
+	// 		var content = msg['content'];
+	// 		var time = msg['time'];
+	// 		var div;
+	// 		if (ID_USER == userid){
+	// 			div="<div class=\"chat-one-msg\">" +
+	//                     "<div class=\"chat-info\">" +
+	//                         "<p class=\"floatr\">"+name+" : "+time+"</p>" +
+	//                     "</div>" +
+	//                     "<div class=\"chat-msg-right\">" +
+	//                         "<div class=\"msg-body msg_right\">"+content+"</div>" +
+	//                     "</div>" +
+	//                 "</div>";
+	//         }else{
+	//             div="<div class=\"chat-one-msg\">" +
+	//                         "<div class=\"chat-info\">" +
+	//                             "<p class=\"floatl\">"+name+" : "+time+"</p>" +
+	//                         "</div>" +
+	//                         "<div class=\"chat-msg-left\">" +
+	//                             "<div class=\"msg-body msg_left \">"+content+"</div>" +
+	//                         "</div>" +
+	//                     "</div>";
+	// 		}
+	// 		$(".chat_body").append(div);
+
+	// 		var h = $(".chat_body").height();
+	// 		var sh = $(".chat_body")[0].scrollHeight;
+	// 		$(".chat_body")[0].scrollTop = sh;
+	// 	};
+	// 	// 客户端关闭和服务端的连接时的回调函数
+	// 	ws.onclose = function(msg){
+	// 	};
+	// 	// 客户端连接上服务端时的回调函数
+	// 	ws.onopen = function(msg){
+	// 	}
+	// 	// 客户端和服务端连接出现错误时的回调函数
+	// 	ws.onerror = function(msg){
+	// 		alert("onerror:"+msg.data);
+	// 	}
+	// 	// 异步向服务器提交数据
+	// 	$(".chat-send").click(function(){
+	// 		var content = $(".chat-content").val();
+	// 		if (content == ""){
+	// 			alert("聊天内容不能为空");
+	// 			return false;
+	// 		}
+	// 		$(".chat-content").val('');
+	// 		var myDate = new Date();
+	// 		// var time = myDate.toLocaleTimeString();
+	// 		var time = fillZero(myDate.getHours()) +":"+fillZero(myDate.getMinutes())+":"+fillZero(myDate.getSeconds());
+	// 		// 向服务器发送消息
+	//         ws.send('userid='+ID_USER+'name='+NAME+'content='+content+'time='+time);
+	//         $.ajax({
+	//             type: "post",
+	//             url: "{% url 'chat:update' %}",
+	//             data: {'userid':ID_USER, 'name':NAME, 'content':content, 'time':time},
+	//             dataType: "json",
+	//         });
+	//         return false;
+	// 	});
+		
+	// });
+	// $(document).keydown(function(event){
+	//     if(event.keyCode==13){
+	//        $(".chat-send").click();
+ //    	}
+ // 	});
+	</script>
+</head>
+<body>
+	<div style="height:100%;">
+		<div class="chat_head">
+			<div class="chat_username"></div>
+		</div>
+		<div class="chat_body">
+				
+		</div>
+		<div class="chat_footer">
+			<table>
+				<tbody>
+					<tr>
+						<td style="width:40px;">
+							<div class="chat_face">
+								<span>
+									<div class="face_more">:)</div>
+								</span>
+							</div>
+						</td>
+						<td class="chat_input">
+							<div>
+								<input class="chat-content" type="text">
+							</div>
+						</td>
+						<td class="chat_btn">
+							<div style="padding-right: 6px;">
+								<button class="chat-send"value="发送">发送</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
