@@ -2,6 +2,10 @@
 网址: [d9chen.sinaapp.com/](http://d9chen.sinaapp.com/)
 
 -------
+#### 功能
+1. 博客:[d9chen.sinaapp.com/blog/](http://d9chen.sinaapp.com/blog/)
+2. 聊天室:[d9chen.sinaapp.com/chat/](http://d9chen.sinaapp.com/chat/)
+
 ####说明
 * Python 版本 2.7.6
 * Django 版本 1.6.5
