@@ -63,10 +63,15 @@ def get_ip_location(ip):
         location = json.loads(location)
         location = location['data']
         address  = ''
+        #国家
         if location['country'] != '':
             address += location['country'] + ' '
+        #省份
         if location['region'] != '':
             address += location['region'] + ' '
+        #城市
+        if location['city'] != '':
+            address += location['city'] + ' '
         if location['area'] != '':
             address += location['area'] + ''
         if location['isp'] != '':

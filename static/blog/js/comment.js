@@ -1,8 +1,12 @@
 $(function(){
     function showErrorMsg(title,message){
-        $('.comment_error_msg').show();
-        $('.comment_error_msg .error_title').text(title);
-        $('.comment_error_msg .error_msg').text(message);
+        $('.filter').show();
+        $('.error').show();
+        $('.error .error-title').text(title);
+        $('.error .error-body').text(message);
+        // $('.comment_error_msg').show();
+        // $('.comment_error_msg .error_title').text(title);
+        // $('.comment_error_msg .error_msg').text(message);
     }
     $("#id_comment_submit").click(function(){
         var form     = $('#id_comment_form');
@@ -49,9 +53,10 @@ $(function(){
         });
         return false;
     });
-    $('.comment_error_msg .error_ok').click(function(){
-        $('.comment_error_msg').hide();
-    })
+    $('.error #id_error_ok').click(function(){
+        $('.error').hide();
+        $('.filter').hide();
+    });
     $('#id_idcode').click(function(){
         var i = Math.random();
         $('#id_idcode img').attr('src','/mcaptcha/image/'+i+'/')
