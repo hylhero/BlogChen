@@ -14,6 +14,7 @@
 * 使用了代码高亮插件[syntaxhighlighter](http://alexgorbatchev.com/SyntaxHighlighter/)
 * 自己使用PIL库写了一个生成验证码的模块,但目前还未实现验证功能
 * 使用了[Jquery](http://jquery.com/)
+* 使用了[七牛Python SDK](http://developer.qiniu.com/docs/v6/sdk/python-sdk.html)
 * 编程工具使用了[Sublime Text 2](http://www.sublimetext.com/)
 
 ####关于博客
