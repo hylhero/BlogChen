@@ -1,0 +1,85 @@
+{% extends 'blog/mobile/base.mobile.html' %}
+{% load staticfiles %}
+{% block title %}Blog - Chen{% endblock %}
+{% block extra_description %}
+    {{ block.super }}
+{% endblock %}
+{% block extra_keywords %}
+    {{ block.super }}
+{% endblock %}
+{% block extra_link %}
+<style type="text/css">
+.functionlist{
+    padding-top: 10px;
+}
+.functionlist table{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: medium none;
+    border-spacing: 0px;
+}
+.functionlist .oneapp{
+    cursor: pointer;
+    border:1px solid #eee;
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+.functionlist .oneapp:hover{
+    background-color: #EFEFEF;
+}
+.functionlist .oneapp img{
+    width: 160px;
+    height: 115px;
+}
+.functionlist .oneapp p{
+    text-align: center;
+    color: #888;
+}
+.welcome{
+    padding: 0px 0px 30px;
+}
+.welcome h1{
+    text-align: center;
+    color: #555;
+    font-size: 24px;
+    font-weight: 500;
+}
+.myapptitle{
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    padding: 10px 0px;
+    background-color: #EFEFEF;
+}
+</style>
+{% endblock %}
+{% block extra_js %}
+
+{% endblock %}
+{% block nav_blog %}focus{% endblock %}
+{% block container %}
+    <div class="welcome">
+        <h1>欢迎访问d9chen的博客</h1>
+    </div>
+    <div class="myapptitle">我的应用</div>
+    <div class="functionlist">
+        <a class="oneapp"href="/blog/">
+            <!-- <img src="http://d9chen.qiniudn.com/home/cblog.png"> -->
+            <p><img src="{% static 'blog/images/cblog.png' %}"></p>
+            <p>我的博客</p>
+        </a>
+        <a class="oneapp"href="/chat/">
+            <!-- <img src="http://d9chen.qiniudn.com/home/cchat.png"> -->
+            <p><img src="{% static 'blog/images/cchat.png' %}"></p>
+            <p>聊天室</p>
+        </a>
+        <a class="oneapp"href="/">
+            <!-- <img src="http://d9chen.qiniudn.com/home/cbing.png"> -->
+            <p><img src="{% static 'blog/images/cbing.png' %}"></p>
+            <p>必应壁纸</p>
+        </a>
+    </div>
+{% endblock %}

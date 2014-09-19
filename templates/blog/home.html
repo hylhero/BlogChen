@@ -1,0 +1,103 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}欢迎访问 Blog-Chen{% endblock %}
+{% block extra_meta %}
+	{{ block.super }}
+	<meta name="description" content="{% for blog in blogs %} {{ blog.title }} {% endfor %}">
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+	<link href="{% static 'syntaxhighlighter/css/shCore.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'syntaxhighlighter/css/shThemeDefault.css' %}" type="text/css" rel="stylesheet">
+    <style type="text/css">
+.functionlist{
+    padding-top: 10px;
+}
+.functionlist table{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: medium none;
+    border-spacing: 0px;
+}
+.functionlist .oneapp{
+    position: relative;
+    float: left;
+    cursor: pointer;
+    border:1px solid #eee;
+    padding: 0px 30px;
+    margin-right: 100px;
+}
+.functionlist .oneapp:hover{
+    background-color: #EFEFEF;
+}
+.functionlist .oneapp-last{
+    margin-right: 0px;
+}
+.functionlist .oneapp img{
+    width: 200px;
+    height: 148px;
+}
+.functionlist .oneapp p{
+    text-align: center;
+    color: #888;
+}
+.welcome{
+    padding: 20px 0px 60px;
+}
+.welcome h1{
+    text-align: center;
+    color: #555;
+    font-size: 24px;
+    font-weight: 500;
+}
+.myapptitle{
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    padding: 10px 0px;
+    background-color: #EFEFEF;
+}
+    </style>
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+{% endblock %}
+{% block nav_index %}focus{% endblock %}
+{% block container %}
+    <div class="container"style="padding-top:60px;">
+        <div class="welcome">
+            <h1>欢迎访问d9chen的博客</h1>
+        </div>
+        <div class="myapptitle">我的应用</div>
+        <div class="functionlist">
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            <a class="oneapp"href="/blog/">
+                                <!-- <img src="http://d9chen.qiniudn.com/home/cblog.png"> -->
+                                <img src="{% static  'blog/images/cblog.png'%}">
+                                <p>我的博客</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="oneapp"href="/chat/">
+                                <!-- <img src="http://d9chen.qiniudn.com/home/cchat.png"> -->
+                                <img src="{% static  'blog/images/cchat.png'%}">
+                                <p>聊天室</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="oneapp oneapp-last"href="/">
+                                <!-- <img src="http://d9chen.qiniudn.com/home/cbing.png"> -->
+                                <img src="{% static  'blog/images/cbing.png'%}">
+                                <p>必应壁纸</p>
+                            </a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+{% endblock %}

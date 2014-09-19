@@ -36,10 +36,12 @@ def save_user_visitfoot(request):
     userfoot.save()
 
 def home(request):
-    device  = 'PC'
-    save_user_visitfoot(request) # 保存用户足迹
-    print 'home'
-    return HttpResponseRedirect('/blog')
+    device  = get_user_device(request)
+    # save_user_visitfoot(request) # 保存用户足迹
+    template = 'blog/home.html' if device == 'PC' else 'blog/mobile/home.mobile.html'
+    context = {}
+    return render_to_response(template, context,
+                              context_instance=RequestContext(request))
 
 def index(request,page=1):
     device  = get_user_device(request)
