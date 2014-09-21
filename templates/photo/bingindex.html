@@ -1,0 +1,71 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}必应今日壁纸-{{ bingwallpaper.title }} Blog-Chen{% endblock %}
+{% block extra_description %}
+    使用Python urllib2抓取必应首页壁纸
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/home.css' %}">
+    <style type="text/css">
+li{
+    list-style: none;
+}
+.bingwallpaper{
+    position: relative;
+    width: 1000px;
+    height: 480px;
+    overflow: hidden;
+}
+.bingwallpaper img{
+    width: 100%;
+}
+.bingwallpaper .bingstory{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.2);
+    bottom: 0px;
+}
+.bingwallpaper .bingstory .onestory{
+    width: 25%;
+    float: left;
+    color: #EFEFEF;
+    font-size: 12px;
+}
+.bingwallpaper .bingstory .onestory p{
+    padding: 0px 4px;
+}
+.bingwallpaper .bingstory .onestory .desc{
+    padding-top: 16px;
+}
+.bingwallpaper .bingstory .onestory .query{
+    display: inline;
+}
+    </style>
+{% endblock %}
+
+{% block container %}
+    <div class="container"style="padding-top:100px;">
+        <div class="bingwallpaper">
+            <img src="{{ bingwallpaper.imgurl }}">
+            <div class="bingstory">
+                <div class="onestory">
+                    <p class="desc">{{ bingwallpaper.desc1 }}</p>
+                    <p class="query">{{ bingwallpaper.query1 }}</p>
+                </div>
+                <div class="onestory">
+                    <p class="desc">{{ bingwallpaper.desc2 }}</p>
+                    <p class="query">{{ bingwallpaper.query2 }}</p>
+                </div>
+                <div class="onestory">
+                    <p class="desc">{{ bingwallpaper.desc3 }}</p>
+                    <p class="query">{{ bingwallpaper.query3 }}</p>
+                </div>
+                <div class="onestory">
+                    <p class="desc">{{ bingwallpaper.desc4 }}</p>
+                    <p class="query">{{ bingwallpaper.query4 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

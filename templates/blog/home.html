@@ -9,56 +9,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
 	<link href="{% static 'syntaxhighlighter/css/shCore.css' %}" type="text/css" rel="stylesheet">
 	<link href="{% static 'syntaxhighlighter/css/shThemeDefault.css' %}" type="text/css" rel="stylesheet">
-    <style type="text/css">
-.functionlist{
-    padding-top: 10px;
-}
-.functionlist table{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    border: medium none;
-    border-spacing: 0px;
-}
-.functionlist .oneapp{
-    position: relative;
-    float: left;
-    cursor: pointer;
-    border:1px solid #eee;
-    padding: 0px 30px;
-    margin-right: 100px;
-}
-.functionlist .oneapp:hover{
-    background-color: #EFEFEF;
-}
-.functionlist .oneapp-last{
-    margin-right: 0px;
-}
-.functionlist .oneapp img{
-    width: 200px;
-    height: 148px;
-}
-.functionlist .oneapp p{
-    text-align: center;
-    color: #888;
-}
-.welcome{
-    padding: 20px 0px 60px;
-}
-.welcome h1{
-    text-align: center;
-    color: #555;
-    font-size: 24px;
-    font-weight: 500;
-}
-.myapptitle{
-    text-align: center;
-    color: #555;
-    font-size: 20px;
-    padding: 10px 0px;
-    background-color: #EFEFEF;
-}
-    </style>
 {% endblock %}
 {% block extra_js %}
     <script src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
@@ -89,7 +39,7 @@
                             </a>
                         </td>
                         <td>
-                            <a class="oneapp oneapp-last"href="/">
+                            <a class="oneapp oneapp-last"href="/photo/bing/">
                                 <!-- <img src="http://d9chen.qiniudn.com/home/cbing.png"> -->
                                 <img src="{% static  'blog/images/cbing.png'%}">
                                 <p>必应壁纸</p>

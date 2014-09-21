@@ -1,1 +1,1 @@
-from django.conf.urls import patterns, urlfrom photo import viewsurlpatterns = patterns('',    url(r'^save_bing_wallpaper/$',views.savebing,name='savebing'),)
+from django.conf.urls import patterns, urlfrom photo import viewsurlpatterns = patterns('',    url(r'^bing/$',views.bingindex,name='bingindex'),)

@@ -137,6 +137,61 @@ body{
 	margin-top: 22px;
     text-align: center;
 }
+.container{
+    margin: 0px auto;
+    width: 1000px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
+.functionlist{
+    padding-top: 10px;
+}
+.functionlist table{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: medium none;
+    border-spacing: 0px;
+}
+.functionlist .oneapp{
+    position: relative;
+    float: left;
+    cursor: pointer;
+    border:1px solid #eee;
+    padding: 0px 30px;
+    margin-right: 100px;
+}
+.functionlist .oneapp:hover{
+    background-color: #EFEFEF;
+}
+.functionlist .oneapp-last{
+    margin-right: 0px;
+}
+.functionlist .oneapp img{
+    width: 200px;
+    height: 148px;
+}
+.functionlist .oneapp p{
+    text-align: center;
+    color: #888;
+}
+.welcome{
+    padding: 20px 0px 60px;
+}
+.welcome h1{
+    text-align: center;
+    color: #555;
+    font-size: 24px;
+    font-weight: 500;
+}
+.myapptitle{
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    padding: 10px 0px;
+    background-color: #EFEFEF;
+}
 .error{
     text-align: center;
     position: fixed;
