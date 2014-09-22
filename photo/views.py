@@ -109,7 +109,7 @@ def save_img(img_url):
 
 def bingindex(request):
     device  = get_user_device(request)
-    template = 'photo/bingindex.html' if device == 'MOBILE' else 'photo/bingindex.html'
+    template = 'photo/bingindex.m.html' if device == 'MOBILE' else 'photo/bingindex.html'
 
     tnow  = datetime.datetime.now()
     try:
