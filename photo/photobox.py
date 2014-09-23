@@ -52,8 +52,7 @@ image_boxs = {
 # '|                    |'
 # '|____________________|'
     0:{
-            'html':['<div class="img_1000 imgfloat"><img class="img_1000_350" src="{0}"></img></div>',],
-            'img_count':1,
+            'html':['<div class="img_1000 imgfloat"><img class="scrollLoading" class="img_1000_350" data-url="{0}" src="%s"></img></div>',],
             'width':1000,
             'scale':[get_scale(1000,350),],
         },
@@ -62,8 +61,7 @@ image_boxs = {
 # '|            |'
 # '|____________|'
     1:{
-            'html':['<div class="img_600 imgfloat"><img class="img_600_350" src="{0}"></img></div>',],
-            'img_count':1,
+            'html':['<div class="img_600 imgfloat"><img class="scrollLoading" class="img_600_350" data-url="{0}" src="%s"></img></div>',],
             'width':600,
             'scale':[get_scale(600,350),],
         },
@@ -72,8 +70,7 @@ image_boxs = {
 # '|        |'
 # '|________|'
     2:{
-            'html':['<div class="img_400 imgfloat"><img class="img_400_350" src="{0}"></img></div>',],
-            'img_count':1,
+            'html':['<div class="img_400 imgfloat"><img class="scrollLoading" class="img_400_350" data-url="{0}" src="%s"></img></div>',],
             'width':400,
             'scale':[get_scale(400,350),],
         },
@@ -82,9 +79,8 @@ image_boxs = {
 # '|________|'
 # '|________|'
     3:{
-            'html':['<div class="img_400 imgfloat"><img class="img_400_200" src="{0}"></img>',
-                    '<img class="img_400_150" src="{0}"></img></div>',],
-            'img_count':2,
+            'html':['<div class="img_400 imgfloat"><img class="scrollLoading" class="img_400_200" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_400_150" data-url="{0}" src="%s"></img></div>',],
             'width':400,
             'scale':[get_scale(400,200), get_scale(400,150),],
         },
@@ -93,9 +89,8 @@ image_boxs = {
 # '|        |'
 # '|________|'
     4:{
-            'html':['<div class="img_400 imgfloat"><img class="img_400_150" src="{0}"></img>',
-                    '<img class="img_400_200" src="{0}"></img></div>',],
-            'img_count':2,
+            'html':['<div class="img_400 imgfloat"><img class="scrollLoading" class="img_400_150" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_400_200" data-url="{0}" src="%s"></img></div>',],
             'width':400,
             'scale':[get_scale(400,150), get_scale(400,200),],
         },
@@ -104,10 +99,9 @@ image_boxs = {
 # '|        |'
 # '|________|'
     5:{
-            'html':['<div class="img_400 imgfloat"><img class="img_200_150" src="{0}"></img>',
-                    '<img class="img_200_150" src="{0}"></img>',
-                    '<img class="img_400_200" src="{0}"></img></div>',],
-            'img_count':3,
+            'html':['<div class="img_400 imgfloat"><img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_400_200" data-url="{0}" src="%s"></img></div>',],
             'width':400,
             'scale':[get_scale(200,150), get_scale(200,150), get_scale(400,200),],
         },
@@ -116,10 +110,9 @@ image_boxs = {
 # '|________|'
 # '|___|____|'
     6:{
-            'html':['<div class="img_400 imgfloat"><img class="img_400_200" src="{0}"></img>',
-                    '<img class="img_200_150" src="{0}"></img>',
-                    '<img class="img_200_150" src="{0}"></img></div>',],
-            'img_count':3,
+            'html':['<div class="img_400 imgfloat"><img class="scrollLoading" class="img_400_200" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img></div>',],
             'width':400,
             'scale':[get_scale(400,200), get_scale(200,150), get_scale(200,150),],
         },
@@ -128,8 +121,7 @@ image_boxs = {
 # '|    |'
 # '|____|'
     7:{
-            'html':['<div class="img_200 imgfloat"><img class="img_200_350" src="{0}"></img></div>',],
-            'img_count':1,
+            'html':['<div class="img_200 imgfloat"><img class="scrollLoading" class="img_200_350" data-url="{0}" src="%s"></img></div>',],
             'width':200,
             'scale':[get_scale(200,350),],
         },
@@ -138,9 +130,8 @@ image_boxs = {
 # '|    |'
 # '|____|'
     8:{
-            'html':['<div class="img_200 imgfloat"><img class="img_200_150" src="{0}"></img>',
-                    '<img class="img_200_200" src="{0}"></img></div>',],
-            'img_count':2,
+            'html':['<div class="img_200 imgfloat"><img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_200_200" data-url="{0}" src="%s"></img></div>',],
             'width':200,
             'scale':[get_scale(200,150), get_scale(200,200),],
         },
@@ -149,9 +140,8 @@ image_boxs = {
 # '|____|'
 # '|____|'
     9:{
-            'html':['<div class="img_200 imgfloat"><img class="img_200_200" src="{0}"></img>',
-                    '<img class="img_200_150" src="{0}"></img></div>',],
-            'img_count':2,
+            'html':['<div class="img_200 imgfloat"><img class="scrollLoading" class="img_200_200" data-url="{0}" src="%s"></img>',
+                    '<img class="scrollLoading" class="img_200_150" data-url="{0}" src="%s"></img></div>',],
             'width':200,
             'scale':[get_scale(200,200), get_scale(200,150),],
         },

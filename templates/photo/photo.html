@@ -102,12 +102,18 @@ li{
 }
     </style>
 {% endblock %}
-
+{% block extra_js %}
+    <script type="text/javascript"src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+    <script type="text/javascript"src="{% static 'site/jquery.scrollLoading.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $(".scrollLoading").scrollLoading();
+        });
+    </script>
+{% endblock %}
+{% block nav_photo %}focus{% endblock %}
 {% block container %}
     <div class="container"style="padding-top:100px;">
-        <div class="one_row">
-            <img src="{% static 'photo/images/1.jpg' %}" width="1000px;"height="350px;">
-        </div>
         {{photoHtml|safe}}
     </div>
 {% endblock %}

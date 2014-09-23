@@ -67,7 +67,7 @@ body{
  .right_nav{
 	float: right;
     width:60%;
-    max-width: 239px;
+    max-width: 280px;
 }
 .header
  .right_nav a{
@@ -78,7 +78,7 @@ body{
     padding-top: 18px;
     padding-bottom: 6px;
 	transition: background-color 0.15s ease 0s;
-    width:33.3333%;
+    width:25%;
 	float: left;
     text-align: center;
 	color: #FFF;
@@ -164,6 +164,7 @@ body{
 }
 .functionlist .oneapp:hover{
     background-color: #EFEFEF;
+    transition: background-color 0.15s ease 0s;
 }
 .functionlist .oneapp-last{
     margin-right: 0px;
