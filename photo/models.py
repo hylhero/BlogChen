@@ -25,3 +25,17 @@ class BingWallPaper(models.Model):
         db_table            = 'photo_bingwallpaper'
         verbose_name        = u'必应壁纸'
         verbose_name_plural = u'必应壁纸'
+
+class PhotoWall(models.Model):
+    IMAGE_TYPE = (('photowall',u'照片墙'),)
+    imgurl     = models.URLField(u'图片url')
+    created    = models.DateTimeField(u'图片时间', editable=False, auto_now_add=True)
+    imgtype    = models.CharField(u'类别',max_length=10,choices=IMAGE_TYPE)
+
+    def __unicode__(self):
+        return self.imgtype
+    class Meta:
+        ordering            = ['-created']
+        db_table            = 'photo_photowall'
+        verbose_name        = u'照片墙'
+        verbose_name_plural = u'照片墙'
