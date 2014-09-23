@@ -6,6 +6,9 @@ image_styles = '''
 .imgfloat{
     float:left;
 }
+.imgfloat img{
+    float:left;
+}
 .img_200_150{
     width: 200px;
     height: 150px;
