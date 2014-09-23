@@ -6,6 +6,7 @@
 1. 博客:[d9chen.sinaapp.com/blog/](http://d9chen.sinaapp.com/blog/)
 2. 聊天室:[d9chen.sinaapp.com/chat/](http://d9chen.sinaapp.com/chat/)
 3. 必应壁纸:[d9chen.sinaapp.com/photo/bing/](http://d9chen.sinaapp.com/photo/bing/)
+4. 图片:[http://d9chen.sinaapp.com/photo/](http://d9chen.sinaapp.com/photo/)
 
 ####说明
 * Python 版本 2.7.6

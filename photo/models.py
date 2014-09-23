@@ -1,8 +1,8 @@
 #-*- coding:utf-8 -*-
 
 from django.db import models
-
 import datetime
+from QiniuStorage import QiniuStorage
 
 class BingWallPaper(models.Model):
     imgurl     = models.URLField(u'图片url')
@@ -28,7 +28,7 @@ class BingWallPaper(models.Model):
 
 class PhotoWall(models.Model):
     IMAGE_TYPE = (('photowall',u'照片墙'),)
-    imgurl     = models.URLField(u'图片url')
+    imgurl     = models.FileField(upload_to='photowall',verbose_name=u'图片url',storage=QiniuStorage(folder='photowall/'))
     created    = models.DateTimeField(u'图片时间', editable=False, auto_now_add=True)
     imgtype    = models.CharField(u'类别',max_length=10,choices=IMAGE_TYPE)
 
