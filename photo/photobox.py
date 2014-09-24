@@ -172,3 +172,20 @@ def generate_html(pagerow=8):
         imgBoxs += generate_row()
     return imgBoxs
 
+RANDOM_IMAGE_BOX_M = {0:[1,2],400:[1],600:[2]}
+def generate_row_mobile():
+    imgBox = []
+    t_width = 0
+    while True:
+        if t_width == 1000:
+            break
+        bindex = random.choice(RANDOM_IMAGE_BOX_M[t_width])
+        imgBox.append(image_boxs[bindex])
+        t_width += image_boxs[bindex]['width']
+    return imgBox
+def generate_html_mobile(pagerow=6):
+    imgBoxs = []
+    for i in xrange(pagerow):
+        imgBoxs += generate_row_mobile()
+    return imgBoxs
+

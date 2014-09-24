@@ -22,6 +22,7 @@
 		<span class="nav">
 			<a class="{% block nav_index %}{% endblock %}"href="/">首页</a>
 			<a class="{% block nav_blog %}{% endblock %}"href="{% url 'blog:index' %}">博客</a>
+            <a class="{% block nav_photo %}{% endblock %}"href="{% url 'photo:photo' %}">图库</a>
 			<a class="{% block nav_about %}{% endblock %}"href="/about">关于</a>
 		</span>
 	</div>

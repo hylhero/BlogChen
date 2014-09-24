@@ -1,0 +1,46 @@
+{% extends 'blog/mobile/base.mobile.html' %}
+{% load staticfiles %}
+{% block title %}必应今日壁纸-{{ bingwallpaper.title }} Blog-Chen{% endblock %}
+{% block extra_description %}
+    使用Python urllib2抓取必应首页壁纸
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/home.css' %}">
+    <style type="text/css">
+.one_row{
+    float: left;
+}
+.one_row img{
+    padding: 0px;
+    border:0px;
+    float: left;
+}
+
+.imgfloat{
+    float:left;
+}
+.imgfloat img{
+    float: left;
+    width: 100%;
+}
+.img_600{
+    width: 60%;
+}
+.img_400{
+    width: 40%;
+}
+    </style>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript"src="{% static 'site/jquery-1.8.2.min.js' %}"></script>
+    <script type="text/javascript"src="{% static 'site/jquery.scrollLoading.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $(".scrollLoading").scrollLoading();
+        });
+    </script>
+{% endblock %}
+{% block nav_photo %}focus{% endblock %}
+{% block container %}
+    {{photoHtml|safe}}
+{% endblock %}
