@@ -26,7 +26,7 @@
 * 优化了模板,实现了在手机上也能达到良好显示的功能
 * 目前博客不支持用户注册,订阅,邮件发送等功能,这些有待进一步开发
 
-```Python
+```
 :)
 website:http://d9chen.sinaapp.com
 @author:cheer<d9chen@outlook.com>
