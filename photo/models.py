@@ -28,7 +28,7 @@ class BingWallPaper(models.Model):
 
 class PhotoWall(models.Model):
     IMAGE_TYPE = (('photowall',u'照片墙'),)
-    imgurl     = models.FileField(upload_to='photowall',verbose_name=u'图片url',storage=QiniuStorage(folder='photowall/'))
+    imgurl     = models.ImageField(upload_to='photowall',verbose_name=u'图片url',storage=QiniuStorage(folder='photowall/'))
     created    = models.DateTimeField(u'图片时间', editable=False, auto_now_add=True)
     imgtype    = models.CharField(u'类别',max_length=10,choices=IMAGE_TYPE)
 
