@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'feedback/$', 'blog.views.feedback', name='feedback'),
     url(r'chat/', include('chat.urls', namespace='chat')),
     url(r'photo/', include('photo.urls', namespace='photo')),
+    url(r'interest/', include('interest.urls', namespace='interest')),
 
 )
 urlpatterns += patterns('',

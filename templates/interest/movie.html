@@ -1,0 +1,146 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %}关于-Chen{% endblock %}
+{% block extra_meta %}
+	{{ block.super }}
+	<meta name="description" content="">
+{% endblock %}
+{% block extra_link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/about.css' %}">
+ <style type="text/css">
+ .title p{
+ 	font-size: 24px;
+ 	color: #666;
+ 	padding: 10px 0px;
+ 	text-align: center;
+ }
+.moviebox{
+	font-family: "Courier New","Microsoft YaHei";
+}
+.movielist{
+	list-style: none outside none;
+}
+.movie_item{
+	position: relative;
+	padding: 20px 0px 10px 200px;
+	min-height: 240px;
+	border-top: 1px solid #E2E2E2;
+}
+.movie_img{
+	left: 0px;
+	top: 20px;
+	position: absolute;
+}
+.movie_img img{
+	width: 160px;
+	height: 236px;
+}
+.item_row{
+	float: left;
+	width: 100%;
+	min-height: 18px;
+	padding: 5px 0px 5px 0px;
+	font-size: 14px;
+}
+.movie_name{
+	line-height: 32px;
+	font-weight: 400;
+	color: #F60;
+	padding-bottom: 10px;
+}
+.movie_name a{
+	color: #F60;
+}
+.item_row label{
+	color: #888;
+	float: left;
+	padding-right: 10px;
+}
+.item_row div{
+	line-height: 20px;
+}
+.precolumn{
+	float: left;
+	width: 40%;
+	overflow: hidden;
+}
+.endcolumn{
+	float: left;
+	width: 60%;
+}
+.movie_info{
+	color: #888;
+	padding-left: 54px;
+}
+ </style>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript"src="{% static 'blog/js/feedback.js' %}"></script>
+{% endblock %}
+
+{% block container %}
+    <div class="container">
+    	<div class="title">
+			<p>我喜欢的电影</p>
+		</div>
+    	<div class="moviebox">
+    		<ul class="movielist">
+                {% for movie in movies %}
+    			<li class="movie_item">
+    				<a class="movie_img" href="javascript:void(0);"><img src="{% static 'interest/images/movies/1.jpg' %}"></a>
+    				<div class="info">
+    					<h2 class="movie_name"><a href="">{{ movie.name }}</a></h2>
+    					<div class="item_row">
+							<div class="precolumn">
+								<label>名 称:</label>
+								<div>{{ movie.name }}</div>
+							</div>
+							<div class="endcolumn">
+								<label>时 间:</label>
+								<div>{{ movie.releasedate|date:"Y" }}</div>
+							</div>
+    					</div>
+    					<div class="item_row">
+							<div class="precolumn">
+								<label>地  区:</label>
+								<div>{{ movie.area }}</div>
+							</div>
+							<div class="endcolumn">
+								<label>类  型:</label>
+								<div>
+                                {% for type in movie.style.all %}
+                                    <span>{{ type.name }}</span>
+                                {% endfor %}
+                                </div>
+							</div>
+    					</div>
+    					<div class="item_row">
+							<div class="precolumn">
+								<label>导  演:</label>
+								<div>{{ movie.direct }}</div>
+							</div>
+							<div class="endcolumn">
+								<label>主  演:</label>
+                                <div>
+                                {% for actor in movie.actors.all %}
+								    <span>{{ actor.name }}</span>
+                                {% endfor %}
+                                </div>
+							</div>
+    					</div>
+    					<div class="item_row">
+							<div>
+								<label>简  介:</label>
+								<p class="movie_info">
+								    {{ movie.info }}
+								</p>
+							</div>
+    					</div>
+    				</div>
+    			</li>
+                {% endfor %}
+    		</ul>
+    	</div>
+    </div>
+{% endblock %}

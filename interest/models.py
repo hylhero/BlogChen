@@ -51,6 +51,7 @@ class MovieModel(models.Model):
     actors  = models.ManyToManyField(ActorModel, verbose_name=u'演员', related_name=u'演员')
     info    = models.TextField(u'简介')
     img     = models.ImageField(upload_to='movies',verbose_name=u'海报',storage=QiniuStorage(folder='movies/'))
+    releasedate = models.DateTimeField(u'上映时间')
     createdate = models.DateTimeField(u'上传时间',auto_now_add=True,editable=False)
 
     def __unicode__(self):

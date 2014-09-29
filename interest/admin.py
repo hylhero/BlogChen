@@ -4,7 +4,7 @@ from django.contrib import admin
 from models import ActorModel, AreaModel, MovieStyleModel, MovieModel
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ('name', 'area', 'img')
+    list_display = ('name', 'area', 'releasedate', 'img')
     search_fields = ('name',)
     list_per_page = 20
     ordering = ('-createdate',)
