@@ -3,7 +3,13 @@
 from django.conf.urls import patterns, include, url
 import settings
 from django.contrib import admin
+from blog.sitemap import BlogSitemap
 admin.autodiscover()
+
+
+sitemaps = {
+    'blog': BlogSitemap
+}
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,6 +24,8 @@ urlpatterns = patterns('',
     url(r'chat/', include('chat.urls', namespace='chat')),
     url(r'photo/', include('photo.urls', namespace='photo')),
     url(r'interest/', include('interest.urls', namespace='interest')),
+
+    url(r'^sitemap\.xml/$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps})
 
 )
 urlpatterns += patterns('',

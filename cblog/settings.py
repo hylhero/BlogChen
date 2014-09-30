@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'blog',
     'DjangoUeditor',
     'mcaptcha',
@@ -122,7 +123,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, './upload/media/'),
     os.path.join(BASE_DIR, './static/'),
 )
-
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 MEDIA_ROOT = './upload/media/'
 MEDIA_URL = '/media/'
