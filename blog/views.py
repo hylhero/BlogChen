@@ -6,7 +6,7 @@ from django.template import RequestContext
 from django.db.models import F
 import json
 # from django.utils import simplejson as json
-
+from django.views.decorators.cache import cache_page
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -34,8 +34,9 @@ def save_user_visitfoot(request):
         userfoot = UserVisitFoot(userIP = ip)
 
     userfoot.save()
-
+@cache_page(60 * 15)
 def home(request):
+    print 'home'
     device  = get_user_device(request)
     # save_user_visitfoot(request) # 保存用户足迹
     template = 'blog/home.html' if device == 'PC' else 'blog/mobile/home.mobile.html'

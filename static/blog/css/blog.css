@@ -48,7 +48,18 @@
 .list ul li a span{
 	float: right;
 }
-
+.rss a{
+	color: #555;
+	display: block;
+	height: 28px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 28px;
+	background-color: #EEE;
+}
+.rss a:hover{
+	color: #F60;
+}
 
 /*右边文章管理*/
 .article{
