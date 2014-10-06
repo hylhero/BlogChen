@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     url(r'photo/', include('photo.urls', namespace='photo')),
     url(r'interest/', include('interest.urls', namespace='interest')),
 
-    url(r'^sitemap\.xml/$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps})
+    url(r'^sitemap\.xml/$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'blog':BlogSitemap,}}),
 
 )
 urlpatterns += patterns('',
