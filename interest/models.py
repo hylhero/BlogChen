@@ -62,3 +62,12 @@ class Movie(models.Model):
         db_table            = 'interest_movie'
         verbose_name        = u'电影'
         verbose_name_plural = u'电影'
+
+class Book(models.Model):
+    name = models.CharField(u'书名', max_length=30)
+    createdate = models.DateTimeField(u'上传时间', auto_now_add=True, editable=False)
+    img = models.ImageField(upload_to='books', verbose_name=u'封面',\
+                                storage=QiniuStorage(folder='books/'))
+    info = models.TextField(u'信息')
+    
+    burl = models.URLField(u'链接', blank=True,null=True)

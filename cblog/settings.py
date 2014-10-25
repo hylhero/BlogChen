@@ -23,12 +23,12 @@ SECRET_KEY = '9)yrf^)*4dv#4r16x5t!^lw(!%38$e1@zsd+of--b%q+cf3q^gm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
+
 TEMPLATE_DEBUG = True
 
 
 ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -111,7 +111,7 @@ TIME_FORMAT = 'H:i:s'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_ROOT = ''
-# STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+
 STATIC_URL = '/static/'
 
 
@@ -145,3 +145,15 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+# session
+SESSION_COOKIE_AGE = 60*60*24*3 #1天
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True   #浏览器关闭删除cookies
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     'django.core.context_processors.request',
+# )
+
+# DEBUG = False
+# ALLOWED_HOSTS = ['*']
+# STATIC_ROOT = os.path.join(BASE_DIR,  'static')
