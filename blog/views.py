@@ -1,19 +1,12 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 from django.http.response import HttpResponse, Http404
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-from django.db.models import F
-from django.views.decorators.cache import cache_page
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils import timezone
-from blog.models import Blog, Tag, Category, Link, User, Comment, UserVisitFoot
+from blog.models import Blog, Category, Link, User, Comment, UserVisitFoot
 from forms import CommentForm, FeedBackForm
-from django.core.mail import send_mail
-from utils import get_user_device, get_user_ip
+from utils import get_user_ip
 from django.views.generic.base import TemplateResponseMixin, View
 import re
 import random
@@ -53,9 +46,8 @@ def comment(request):
                 blog = get_object_or_404(Blog, pk=blog_id)
                 blog.comment_num += 1
                 blog.save()
-                pre_comid = form.cleaned_data['pre_comid']
+                # pre_comid = form.cleaned_data['pre_comid']
                 nickname = form.cleaned_data['anickname']
-
                 email = form.cleaned_data['bemail']
                 website = form.cleaned_data['cwebsite']
                 content = form.cleaned_data['dcontent']

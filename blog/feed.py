@@ -1,9 +1,8 @@
 # -*- coding:utf-8 -*-
 from django.contrib.syndication.views import Feed
-
 from blog.models import Blog
 from blog.templatetags.filters import shortblog
-from django.views.decorators.cache import cache_page
+
 
 class LatestBlogFeed(Feed):
 
@@ -11,7 +10,7 @@ class LatestBlogFeed(Feed):
     link = '/blog/rss/'
     author = 'cheer'
     description = u'关注Python django sublime web开发'
-    
+
     def items(self):
         return Blog.objects.all().order_by('-publish_time')[:8]
 

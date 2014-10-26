@@ -1,15 +1,14 @@
 #-*- coding:utf-8 -*-
 from django.http.response import HttpResponse, Http404
-
 from mcaptcha import code
 from cStringIO import StringIO
 import random
 import json
 
-def mcaptcha(request,key):
-    co    = code.Captcha()
-    co_strs = co.captcha()
 
+def mcaptcha(request, key):
+    co = code.Captcha()
+    co_strs = co.captcha()
     out = StringIO()
     co.img.save(out, "PNG")
     out.seek(0)
@@ -21,8 +20,9 @@ def mcaptcha(request,key):
 
     return response
 
+
 def mcaptcha_refresh(request):
     if not request.is_ajax():
         raise Http404
-    print request.is_ajax(),'::',request.POST
-    return HttpResponse(json.dumps({'img':random.randint(100)}),content_type='application/json')
+    print request.is_ajax(), '::', request.POST
+    return HttpResponse(json.dumps({'img': random.randint(100)}), content_type='application/json')

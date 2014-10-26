@@ -12,11 +12,10 @@ session中有记录就直接返回session中的结果，不在继续判断
 import re
 user_device_re = re.compile(r'(mobile|iphone|android|iemobile)')
 
-def get_user_device(request):
-    print 'change_view_mode:',request.GET.get('change_view_mode','MOBILE')
-    # return 'MOBILE'
 
-    device = request.session.get('USER_VIEW_DEVICE','UNKNOWN_VIEW_DEVICE')
+def get_user_device(request):
+    # return 'MOBILE'
+    device = request.session.get('USER_VIEW_DEVICE', 'UNKNOWN_VIEW_DEVICE')
     if device != 'UNKNOWN_VIEW_DEVICE':
         return device
 
@@ -51,25 +50,27 @@ def get_user_device(request):
 #     request.session['USER_VIEW_DEVICE'] = 'PC'
 #     return 'PC'
 
+
 def get_user_ip(request):
-    return request.META.get('REMOTE_ADDR','0.0.0.0')
+    return request.META.get('REMOTE_ADDR', '0.0.0.0')
+
 
 def get_ip_location(ip):
     if ip == '0.0.0.0':
         return ''
-    try :
+    try:
         url = 'http://ip.taobao.com/service/getIpInfo.php?ip=%s' % ip
         location = urllib2.urlopen(url).read()
         location = json.loads(location)
         location = location['data']
-        address  = ''
-        #国家
+        address = ''
+        # 国家
         if location['country'] != '':
             address += location['country'] + ' '
-        #省份
+        # 省份
         if location['region'] != '':
             address += location['region'] + ' '
-        #城市
+        # 城市
         if location['city'] != '':
             address += location['city'] + ' '
         if location['area'] != '':
@@ -77,5 +78,5 @@ def get_ip_location(ip):
         if location['isp'] != '':
             address += location['isp']
         return address
-    except :
+    except:
         return ''

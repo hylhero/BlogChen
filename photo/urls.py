@@ -1,1 +1,1 @@
-from django.conf.urls import patterns, urlfrom photo import viewsurlpatterns = patterns('',    url(r'^$', views.photo, name='photo'),    url(r'^bing/$',views.bingindex,name='bingindex'),)
+from django.conf.urls import patterns, urlfrom photo import viewsurlpatterns = patterns(    '',    url(r'^$', views.photo, name='photo'),    url(r'^bing/$', views.bingindex, name='bingindex'),)
