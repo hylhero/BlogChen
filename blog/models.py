@@ -175,7 +175,7 @@ class UserVisitFoot(models.Model):  # 用户访问记录
                 self.visitednum += 1
                 self.visitedpre = self.visitedlatest
             self.visitedlatest = timenow
-            if self.userIP and (self.address == '' or self.address == None):
+            if self.userIP and (self.address == '' or self.address is None):
                 self.address = get_ip_location(self.userIP)
 
         return super(UserVisitFoot, self).save(*args, **kwargs)
